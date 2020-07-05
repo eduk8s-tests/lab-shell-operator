@@ -8,4 +8,5 @@ modules:
     - exercises/02-operator-hooks
     - exercises/03-event-subscription
     - exercises/04-handling-events
+    - exercises/05-secrets-injection
     - workshop-summary

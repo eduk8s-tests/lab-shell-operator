@@ -13,6 +13,8 @@ modules:
         name: Event Subscription
     exercises/04-handling-events:
         name: Handling Events
+    exercises/05-secrets-injection:
+        name: Secrets Injection
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
