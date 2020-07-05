@@ -10,7 +10,7 @@ The ``shell-operator`` command has already been installed in this workshop envir
 shell-operator help
 ```
 
-The main sub command we are interested is ``start``. You can list its options by running:
+The main sub command we are interested in is ``start``. You can list its options by running:
 
 ```execute
 shell-operator start --help
@@ -72,7 +72,7 @@ Shutdown the ``shell-operator`` by interrupting it.
 <ctrl-c>
 ```
 
-Unfortunately, for some unknown reason, the version of the ``shell-operator`` doesn't want to shutdown gracefully, so send an interrupt one more time, which should force it to shutdown.
+Unfortunately, for some unknown reason the version of the ``shell-operator`` being used doesn't want to shutdown gracefully when run from a terminal, so send an interrupt one more time, which should force it to shutdown.
 
 ```execute-1
 <ctrl-c>
