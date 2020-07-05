@@ -11,6 +11,8 @@ modules:
         name: Operator Hooks
     exercises/03-event-subscription:
         name: Event Subscription
+    exercises/04-handling-events:
+        name: Handling Events
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
