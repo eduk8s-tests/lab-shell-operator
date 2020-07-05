@@ -23,3 +23,5 @@ spec:
         enabled: true
       editor:
         enabled: true
+      registry:
+        enabled: true
