@@ -1,20 +1,24 @@
 apiVersion: training.eduk8s.io/v1alpha2
 kind: Workshop
 metadata:
-  name: lab-markdown-sample
+  name: lab-shell-operator
 spec:
-  title: Markdown Sample
-  description: A sample workshop using Markdown
+  title: Shell Operator
+  description: A workshop exploring the use of the shell-operator
   vendor: eduk8s.io
   difficulty: beginner
   duration: 15m
   url: https://github.com/eduk8s/lab-markdown-sample
   content:
     #image: quay.io/eduk8s/lab-markdown-sample:master
-    files: github.com/eduk8s/lab-markdown-sample
+    image: registry.test/lab-shell-operator:latest
+    #files: github.com/eduk8s/lab-markdown-sample
   session:
     budget: small
     applications:
+      terminal:
+        enabled: true
+        layout: split
       console:
         enabled: true
       editor:

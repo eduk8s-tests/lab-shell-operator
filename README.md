@@ -1,4 +1,4 @@
-LAB - Markdown Sample
-=====================
+LAB - Shell Operator
+====================
 
-Sample workshop content using Markdown formatting for pages.
+A workshop exploring the use of the [shell-operator](https://github.com/flant/shell-operator_).

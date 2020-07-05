@@ -1,0 +1,2 @@
+DEBUG_UNIX_SOCKET=/tmp/shell-operator-debug.sock
+export DEBUG_UNIX_SOCKET
