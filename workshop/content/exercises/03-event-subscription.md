@@ -1,7 +1,7 @@
 Let's now look at the contents of the hook script to see how it works. To view the contents of the hook script run:
 
 ```execute
-cat notifications/hooks/monitor-service-accounts.sh
+cat event-subscription/hooks/monitor-service-accounts.sh
 ```
 
 The contents should be:
@@ -43,7 +43,7 @@ The first thing the ``shell-operator`` therefore does on start up is to go throu
 To see what is generated for the hook script above, run:
 
 ```execute
-notifications/hooks/monitor-service-accounts.sh --config
+event-subscription/hooks/monitor-service-accounts.sh --config
 ```
 
 The output should be:

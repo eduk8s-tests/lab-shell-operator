@@ -18,10 +18,10 @@ shell-operator start --help
 
 The key option we care about at this point is the ``--hooks-dir`` option. This specifies the location of a directory where we have placed the hook scripts we want the ``shell-operator`` to execute when certain events occur for the resource types of interest.
 
-We already have a set of hook scripts for our first example using the ``shell-operator`` which you can find in the ``notifications`` directory. Run:
+We already have a set of hook scripts for our first example using the ``shell-operator`` which you can find in the ``event-subscription`` directory. Run:
 
 ```execute
-tree notifications
+tree event-subscription
 ```
 
 to list the scripts. You should find a single executable shell script called ``hooks/monitor-service-accounts.sh``.
@@ -29,7 +29,7 @@ to list the scripts. You should find a single executable shell script called ``h
 Before we dive into what the script contains, let's run the ``shell-operator`` and see what happens.
 
 ```execute-1
-shell-operator start --hooks-dir notifications/hooks
+shell-operator start --hooks-dir event-subscription/hooks
 ```
 
 First up, although it may not be obvious within the log output, nothing was output corresponding to the existing service account called ``default`` as occurred when we use ``kubectl get --watch``.
