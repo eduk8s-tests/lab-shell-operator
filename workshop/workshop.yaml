@@ -6,4 +6,5 @@ modules:
     - verify-environment
     - exercises/01-resource-events
     - exercises/02-operator-hooks
+    - exercises/03-event-subscription
     - workshop-summary

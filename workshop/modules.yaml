@@ -9,6 +9,8 @@ modules:
         name: Resource Events
     exercises/02-operator-hooks:
         name: Operator Hooks
+    exercises/03-event-subscription:
+        name: Event Subscription
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop
