@@ -42,44 +42,28 @@ To trigger generation of some events, create a new service account ``builder`` a
 kubectl create serviceaccount builder
 ```
 
-This time if you look closely at the log output of the ``shell-operator`` you should see the message.
+This time if you look closely at the log output of the ``shell-operator`` you should see two separate messages, the first being:
 
 ```
->>>>>> Added serviceaccount 'builder' <<<<<<
+>>>>>> Added serviceaccount builder <<<<<<
 ```
 
-Depending on how quickly events were processed by the ``shell-operator``, what you may not see is a similar message corresponding to the ``MODIFIED`` event we saw previously.
-
-The reason for this is that ``kubectl get --watch`` will emit a separate entry for every event. As an optimization in order to cut down on how often the hook script may need to be executed, the ``shell-operator`` can collapse and/discard events which are queued up at the same time.
-
-In other words, if an ``ADDED`` event and ``MODIFIED`` event arrived adjacent in time before the hook script could be executed, the content of the ``ADDED`` event can be discarded, with the content of the ``MODIFIED`` script being used, but with the type changed from ``MODIFIED`` to ``ADDED``.
-
-Similar optimisations to this can occur where multiple ``MODIFIED`` events arrive at the same time, or if there were a ``MODIFIED`` and ``DELETED`` event. The content of the latter event will be what ends up being passed through to the hook script, with the type being adjusted if necessary.
-
-Overall this shouldn't really cause issues with an operator, as it will want to execute on the basis of the most up to date state of the resource, and passing through separate events all the time where collapsing could have been performed, will just cause more work for the operator.
-
-Moving on, to trigger an event for a modification run:
-
-```execute-2
-kubectl patch serviceaccount builder -p '{"imagePullSecrets": [{"name": "eduk8s-registry-credentials"}]}'
-```
-
-This time you should see:
+and the second:
 
 ```
->>>>>> Modified serviceaccount 'builder' <<<<<<
+>>>>>> Modified serviceaccount builder <<<<<<
 ```
 
-Finally, delete the service account by running:
+Delete the service account by running:
 
 ```execute-2
 kubectl delete serviceaccount builder
 ```
 
-A message corresponding to deletion of the service account should be logged.
+and a message corresponding to deletion of the service account should be logged.
 
 ```
->>>>>> Deleted serviceaccount 'builder' <<<<<<
+>>>>>> Deleted serviceaccount builder <<<<<<
 ```
 
 Shutdown the ``shell-operator`` by interrupting it.

@@ -16,10 +16,12 @@ kubernetes:
       - $SESSION_NAMESPACE
 EOF
 else
-  type=$(jq -r '.[0].type' $BINDING_CONTEXT_PATH)
-  if [[ $type == "Event" ]] ; then
-    serviceAccountName=$(jq -r '.[0].object.metadata.name' $BINDING_CONTEXT_PATH)
-    watchEvent=$(jq -r '.[0].watchEvent' $BINDING_CONTEXT_PATH)
-    echo ">>>>>> ${watchEvent} serviceaccount '${serviceAccountName}' <<<<<<"
-  fi
+  for k in $(jq '. | keys | .[]' $BINDING_CONTEXT_PATH); do
+    type=$(jq -r ".[$k].type" $BINDING_CONTEXT_PATH)
+    if [[ $type == "Event" ]] ; then
+      serviceAccountName=$(jq -r ".[$k].object.metadata.name" $BINDING_CONTEXT_PATH)
+      watchEvent=$(jq -r ".[$k].watchEvent" $BINDING_CONTEXT_PATH)
+      echo ">>>>>> ${watchEvent} serviceaccount ${serviceAccountName} <<<<<<"
+    fi
+  done
 fi
