@@ -7,6 +7,8 @@ modules:
         exit_sign: Start Workshop
     exercises/01-resource-events:
         name: Resource Events
+    exercises/02-operator-hooks:
+        name: Operator Hooks
     workshop-summary:
         name: Workshop Summary
         exit_sign: Finish Workshop

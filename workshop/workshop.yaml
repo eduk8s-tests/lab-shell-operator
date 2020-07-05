@@ -5,4 +5,5 @@ modules:
     - workshop-overview
     - verify-environment
     - exercises/01-resource-events
+    - exercises/02-operator-hooks
     - workshop-summary
