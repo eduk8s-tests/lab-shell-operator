@@ -1,6 +1,6 @@
 FROM flant/shell-operator:v1.0.0-beta.10 as shell-operator
 
-FROM quay.io/eduk8s/base-environment:200701.050253.4ddbcd6
+FROM quay.io/eduk8s/base-environment:200729.065116.d64688f
 
 COPY --from=shell-operator /shell-operator /opt/eduk8s/bin/
 
