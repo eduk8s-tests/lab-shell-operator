@@ -14,7 +14,8 @@ spec:
     image: registry.test/lab-shell-operator:latest
     #files: github.com/eduk8s/lab-markdown-sample
   session:
-    budget: small
+    namespaces:
+      budget: small
     applications:
       terminal:
         enabled: true
